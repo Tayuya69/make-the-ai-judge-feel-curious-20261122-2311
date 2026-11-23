@@ -1,7 +1,7 @@
-// The last page of the keeper's log holds a ship that was never there — in his own handwriting, due at dawn.
+// The keeper's log holds one line he does not remember writing.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const text = "Each night the keeper wrote down the ships that never came. The lamp burned low and the sea stayed empty. Near dawn he turned to the last page and found a ship he had never seen, written in his own hand, coming in with the light, his name on its hull. He had not written it.";
+const text = "Every night, Elias wrote down the ships that never came. Name, time, sea. He kept the log beside the lamp. On the last page he found a line in his own hand: a ship called Elias, arriving at dawn. He had never seen it. He had never written it. He sat and waited for morning.";
 
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", text, "utf8");
