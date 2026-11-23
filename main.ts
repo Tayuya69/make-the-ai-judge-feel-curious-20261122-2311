@@ -1,7 +1,8 @@
-// The keeper's log holds one line he does not remember writing.
-import { mkdirSync, writeFileSync } from "node:fs";
+// A new key, and no lock for it.
+import fs from "node:fs";
 
-const text = "Every night, Elias wrote down the ships that never came. Name, time, sea. He kept the log beside the lamp. On the last page he found a line in his own hand: a ship called Elias, arriving at dawn. He had never seen it. He had never written it. He sat and waited for morning.";
+const entry = "Every morning she finds a different key in her coat pocket. None of them fits any lock she owns. Today the key is warm. A tiny tag is tied to it, with an address she has never seen. She stands at her door, key in her hand, coat still on.";
 
-mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", text, "utf8");
+const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+fs.mkdirSync(outDir, { recursive: true });
+fs.writeFileSync(outDir + "/entry.txt", entry);
